@@ -238,7 +238,6 @@ class nggdb {
         else
             $result = $wpdb->get_results( $wpdb->prepare( "SELECT SQL_CALC_FOUND_ROWS tt.*, t.* FROM $wpdb->nggallery AS t INNER JOIN $wpdb->nggpictures AS tt ON t.gid = tt.galleryid WHERE t.slug = %s {$exclude_clause} ORDER BY tt.{$order_by} {$order_dir} {$limit_by}", $id ), OBJECT_K );
 
-        throw new Exception(print_r($this->paged, true), 500);
         // Count the number of images and calculate the pagination
         if ($limit > 0) {
             $this->paged['total_objects'] = intval ( $wpdb->get_var( "SELECT FOUND_ROWS()" ) );
