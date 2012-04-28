@@ -81,9 +81,9 @@ define('WPLANG', '');
 
 //Added By xami
 define('WP_DEBUG', true);
-//define('WP_DEBUG_LOG', true);
-//define('WP_DEBUG_DISPLAY', false);
-//@ini_set('display_errors',0);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
+@ini_set('display_errors',0);
 define('AUTOSAVE_INTERVAL', 36000);
 define('WP_POST_REVISIONS', false);
 
