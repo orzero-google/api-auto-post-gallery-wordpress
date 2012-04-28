@@ -73,7 +73,7 @@ function add_thumbnail_fields($post_ID) {
         else
             $thumbsize = 'width="285"';
 
-            $post_img = '<img src="'.$first_image->thumbURL.'" '.$thumbsize.' alt="'.htmlentities($first_image->description).'" />';
+        $post_img = '<img src="'.$first_image->thumbURL.'" '.$thumbsize.' alt="'.htmlentities($first_image->description).'" />';
         add_post_meta($post_ID, 'thumbnail', $post_img, true);
     }else{
         global $wpdb;
