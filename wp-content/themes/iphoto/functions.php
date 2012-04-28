@@ -60,6 +60,7 @@ function add_thumbnail_fields($post_ID) {
     delete_post_meta($post_ID, 'thumbnail');
     $gallery_id=get_post_meta($post_ID, 'gallery', $single = true);
 
+    //Added By xami
     if($gallery_id){
         global $nggdb;
         $gallerys=$nggdb->get_gallery($gallery_id, $order_by = 'sortorder', $order_dir = 'ASC', $exclude = false, $limit = 1, $start=rand(0, 10));
