@@ -66,6 +66,7 @@ class nggXMLRPC{
 
         $content_struct = $args[6];		
 
+        return $content_struct;
         $post_id = $this->findMeta('lolita', $post_mark);
 		if(intval($post_id)>0)
         	return intval($post_id);
@@ -310,7 +311,7 @@ class nggXMLRPC{
         if ( isset( $content_struct['wp_post_format'] ) )
             wp_set_post_terms( $post_ID, array( 'post-format-' . $content_struct['wp_post_format'] ), 'post_format' );
 
-        $post_ID = wp_insert_post( $postdata, true );return $post_ID;
+        $post_ID = wp_insert_post( $postdata, true );
         if ( is_wp_error( $post_ID ) )
             return new IXR_Error(500, $post_ID->get_error_message());
 
@@ -318,9 +319,6 @@ class nggXMLRPC{
             return new IXR_Error(500, __('Sorry, your entry could not be posted. Something wrong happened.'));
 
         logIO('O', "Posted ! ID: $post_ID");
-		}catch(Exception $e){
-			return 0;
-		}
 
         return strval($post_ID);
     }
