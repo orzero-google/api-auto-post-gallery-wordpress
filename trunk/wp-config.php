@@ -80,6 +80,12 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+//Added By xami
+define('WP_DEBUG', true);
+//define('WP_DEBUG_LOG', true);
+//define('WP_DEBUG_DISPLAY', false);
+@ini_set('display_errors',0);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
