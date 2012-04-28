@@ -3381,6 +3381,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			return new IXR_Error(401, __('Sorry, you cannot publish this post.'));
 
 		$postdata = wp_get_single_post($post_ID,ARRAY_A);
+        return $postdata;
 
 		$postdata['post_status'] = 'publish';
 
