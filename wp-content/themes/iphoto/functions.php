@@ -63,7 +63,7 @@ function add_thumbnail_fields($post_ID) {
     if($gallery_id){
         global $nggdb;
         $gallerys=$nggdb->get_gallery($gallery_id, $order_by = 'sortorder', $order_dir = 'ASC', $exclude = false, $limit = 1, $start=rand(0, 10));
-        $first_image = current($picturelist);
+        $first_image = current($gallerys);
         add_post_meta($post_ID, 'thumbnail', $first_image->thumbHTML, true);
     }else{
         global $wpdb;
