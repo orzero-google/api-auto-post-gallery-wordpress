@@ -15,8 +15,8 @@ if (!function_exists('utf8Substr')) {
  }
 }
 if ( is_single() ){
-    if ($post->post_excerpt) {
-        $description  = $post->post_excerpt;
+    if ($post->description) {
+        $description  = $post->description;
     } else {
    if(preg_match('/<p>(.*)<\/p>/iU',trim(strip_tags($post->post_content,"<p>")),$result)){
     $post_content = $result['1'];
