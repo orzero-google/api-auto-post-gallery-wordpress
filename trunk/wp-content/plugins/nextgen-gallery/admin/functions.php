@@ -76,23 +76,25 @@ class nggAdmin{
 		}
 		
 		// 1. Check for existing folder
+        // Addey By xami
 		if ( is_dir(WINABSPATH . $defaultpath . $name ) && !(SAFE_MODE) ) {
-			$suffix = 1;
-			do {
-				$alt_name = substr ($name, 0, 200 - ( strlen( $suffix ) + 1 ) ) . "_$suffix";
-				$dir_check = is_dir(WINABSPATH . $defaultpath . $alt_name );
-				$suffix++;
-			} while ( $dir_check );
-			$name = $alt_name;
-		}  
-        // define relative path to gallery inside wp root folder
-        $nggpath = $defaultpath . $name;
-		
-		// 2. Create new gallery folder
-		if ( !wp_mkdir_p (WINABSPATH . $nggpath) ) 
-		  $txt  = __('Unable to create directory ', 'nggallery') . esc_html( $nggpath ) . '!<br />';
-		
-		// 3. Check folder permission
+//			$suffix = 1;
+//			do {
+//				$alt_name = substr ($name, 0, 200 - ( strlen( $suffix ) + 1 ) ) . "_$suffix";
+//				$dir_check = is_dir(WINABSPATH . $defaultpath . $alt_name );
+//				$suffix++;
+//			} while ( $dir_check );
+//			$name = $alt_name;
+		}else{
+            // define relative path to gallery inside wp root folder
+            $nggpath = $defaultpath . $name;
+
+            // 2. Create new gallery folder
+            if ( !wp_mkdir_p (WINABSPATH . $nggpath) )
+              $txt  = __('Unable to create directory ', 'nggallery') . esc_html( $nggpath ) . '!<br />';
+        }
+
+        // 3. Check folder permission
 		if ( !is_writeable(WINABSPATH . $nggpath ) )
 			$txt .= __('Directory', 'nggallery').' <strong>' . esc_html( $nggpath ) . '</strong> '.__('is not writeable !', 'nggallery').'<br />';
 
