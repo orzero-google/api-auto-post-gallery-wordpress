@@ -86,6 +86,9 @@ define('WP_DEBUG', true);
 //define('WP_DEBUG_DISPLAY', false);
 @ini_set('display_errors',0);
 
+define('AUTOSAVE_INTERVAL', 36000);
+define('WP_POST_REVISIONS', false);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
