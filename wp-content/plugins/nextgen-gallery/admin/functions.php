@@ -85,6 +85,7 @@ class nggAdmin{
 //				$suffix++;
 //			} while ( $dir_check );
 //			$name = $alt_name;
+            $nggpath = $defaultpath . $name;
 		}else{
             // define relative path to gallery inside wp root folder
             $nggpath = $defaultpath . $name;
