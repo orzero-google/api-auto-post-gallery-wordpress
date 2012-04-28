@@ -66,9 +66,14 @@ function add_thumbnail_fields($post_ID) {
         $gallerys=$nggdb->get_gallery($gallery_id, $order_by = 'sortorder', $order_dir = 'ASC', $exclude = false, $limit = 1, $start=rand(0, 10));
         $first_image = current($gallerys);
 //        add_post_meta($post_ID, 'thumbnail', $first_image->thumbHTML, true);
-        $h=isset($first_image->meta_data->thumbnail->height) ? intval($first_image->meta_data->thumbnail->height) : 0;
-        $height = ($h>10) ? 'height="'.$h.'"' : '';
-        $post_img = '<img src="'.$first_image->thumbURL.'" width="285" '.$height.' alt="'.htmlentities($first_image->description).'" />';
+//        $h=isset($first_image->meta_data->thumbnail->height) ? intval($first_image->meta_data->thumbnail->height) : 0;
+//        $height = ($h>10) ? 'height="'.$h.'"' : '';
+        if ( isset($first_image->meta_data['thumbnail']) && is_array ($size = $first_image->meta_data['thumbnail']) )
+            $thumbsize = 'width="' . $size['width'] . '" height="' . $size['height'] . '"';
+        else
+            $thumbsize = 'width="285"';
+
+            $post_img = '<img src="'.$first_image->thumbURL.'" '.$thumbsize.' alt="'.htmlentities($first_image->description).'" />';
         add_post_meta($post_ID, 'thumbnail', $post_img, true);
     }else{
         global $wpdb;
