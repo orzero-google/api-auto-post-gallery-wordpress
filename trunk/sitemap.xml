@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://www.lolita.im/wp-content/plugins/google-sitemap-generator/sitemap.xsl"?><!-- generator="wordpress/3.3.2" -->
+<!-- sitemap-generator-url="http://www.arnebrachhold.de" sitemap-generator-version="3.2.7" -->
+<!-- generated-on="April 27, 2012 9:40 pm" -->
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	<url>
+		<loc>http://www.lolita.im/</loc>
+		<lastmod>2012-04-27T16:25:37+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>http://www.lolita.im/sample-page/</loc>
+		<lastmod>2012-04-27T16:25:37+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+</urlset>
