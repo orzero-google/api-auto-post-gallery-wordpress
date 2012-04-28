@@ -61,7 +61,8 @@ function add_thumbnail_fields($post_ID) {
     $gallery_id=get_post_meta($post_ID, 'gallery', $single = true);
 
     if($gallery_id){
-        $gallerys=nggdb::get_gallery($gallery_id, $order_by = 'sortorder', $order_dir = 'ASC', $exclude = false, $limit = 1, $start=rand(0, 10));
+        global $nggdb;
+        $gallerys=$nggdb->get_gallery($gallery_id, $order_by = 'sortorder', $order_dir = 'ASC', $exclude = false, $limit = 1, $start=rand(0, 10));
         foreach($gallerys as $gallery){
             $post_img=$gallery['thumbHTML'];
         }
