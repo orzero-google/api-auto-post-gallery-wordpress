@@ -66,7 +66,6 @@ class nggXMLRPC{
 
         $content_struct = $args[6];		
 
-        return $content_struct;
         $post_id = $this->findMeta('lolita', $post_mark);
 		if(intval($post_id)>0)
         	return intval($post_id);
