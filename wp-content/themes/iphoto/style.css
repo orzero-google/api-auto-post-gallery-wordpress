@@ -121,12 +121,11 @@ a:hover {
 }
 #logo {
 	float:left;
-	margin: 20px
+	margin-top: 8px
 }
 #logo a {
 	text-decoration:none;
 	display:block;
-	width:120px;
 }
 #nav,#nav ul {
 	margin:0;
