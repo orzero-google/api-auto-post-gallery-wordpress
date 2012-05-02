@@ -126,6 +126,7 @@ a:hover {
 #logo a {
 	text-decoration:none;
 	display:block;
+    width: 180px;
 }
 #nav,#nav ul {
 	margin:0;
