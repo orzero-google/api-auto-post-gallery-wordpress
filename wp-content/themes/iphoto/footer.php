@@ -6,10 +6,10 @@
 <!--[if IE 6]><script src="<?php bloginfo('template_url');?>/includes/jQuery.autoIMG.min.js"></script><![endif]-->
 <script type="text/javascript">
 /* <![CDATA[ */
-$("div.post-content > p > a > img").
+$("div.post-content > p > a > img").show().
 //    attr('data-original', $(self).attr('src')).
 <!--    attr('data-original', '--><?php //bloginfo('template_url'); ?><!--/images/logo-b.png').-->
-    lazyload();
+    lazyload({ threshold : 200 });
 /* ]]> */
 </script>
 <?php wp_footer(); ?>
