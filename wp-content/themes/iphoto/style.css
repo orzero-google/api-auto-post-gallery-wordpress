@@ -491,7 +491,6 @@ a:hover {
 	_width:658px;
 }
 #post-home .post-content p img {
-    display: none;
 	max-width:660px;
 	height:auto;
 	_width:expression(this.width > 660? "660px":this.width);
