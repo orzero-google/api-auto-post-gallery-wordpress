@@ -6,10 +6,19 @@
 <!--[if IE 6]><script src="<?php bloginfo('template_url');?>/includes/jQuery.autoIMG.min.js"></script><![endif]-->
 <script type="text/javascript">
 /* <![CDATA[ */
-$("div.post-content > p > a > img").show().
+//$("div.post-content > p > a > img").show().
 //    attr('data-original', $(self).attr('src')).
 <!--    attr('data-original', '--><?php //bloginfo('template_url'); ?><!--/images/logo-b.png').-->
-    lazyload();
+//    lazyload();
+$(function() {
+    $("div.post-content > p > a > img").lazyload({
+        placeholder : "<?php bloginfo('template_url'); ?>/images/logo-b.png",
+        event : "sporty"
+    });
+});
+$(window).bind("load", function() {
+    var timeout = setTimeout(function() {$("div.post-content > p > a > img").trigger("sporty")}, 200);
+});
 /* ]]> */
 </script>
 <?php wp_footer(); ?>
