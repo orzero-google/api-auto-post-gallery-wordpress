@@ -9,7 +9,7 @@
 $("div.post-content > p > a > img").show().
 //    attr('data-original', $(self).attr('src')).
 <!--    attr('data-original', '--><?php //bloginfo('template_url'); ?><!--/images/logo-b.png').-->
-    lazyload({ threshold : 200 });
+    lazyload();
 /* ]]> */
 </script>
 <?php wp_footer(); ?>
