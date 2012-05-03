@@ -86,7 +86,7 @@ define('WP_DEBUG', false);
 //@ini_set('display_errors',0);
 define('AUTOSAVE_INTERVAL', 36000);
 define('WP_POST_REVISIONS', false);
-define('WP_SITEURL', $_SERVER['HTTP_HOST']);
+define('WP_SITEURL', '/');
 define('WP_HOME', '/');
 
 /* That's all, stop editing! Happy blogging. */
