@@ -87,7 +87,7 @@ define('WP_DEBUG', false);
 define('AUTOSAVE_INTERVAL', 36000);
 define('WP_POST_REVISIONS', false);
 define('WP_SITEURL', $_SERVER['HTTP_HOST']);
-define('WP_HOME', $_SERVER['HTTP_HOST']);
+define('WP_HOME', '/');
 
 /* That's all, stop editing! Happy blogging. */
 
