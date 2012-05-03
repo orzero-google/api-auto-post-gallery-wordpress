@@ -6,7 +6,12 @@
 <!--[if IE 6]><script src="<?php bloginfo('template_url');?>/includes/jQuery.autoIMG.min.js"></script><![endif]-->
 <script type="text/javascript">
 /* <![CDATA[ */
-$("div.post-content > p > a > img").attr('data-original', '<?php bloginfo('template_url'); ?>/images/logo-b.png').lazyload();
+$("div.post-content > p > a > img").
+    attr('tmp_src', $(this).attr('src')).
+    attr('src', '<?php bloginfo('template_url'); ?>/images/logo-b.png').
+    attr('data-original', $(this).attr('tmp_src')).
+    removeAttr('tmp_src').
+    lazyload();
 /* ]]> */
 </script>
 <?php wp_footer(); ?>
