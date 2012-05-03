@@ -1,6 +1,6 @@
 jQuery(document).ready(function(i) {
     var h = i("#sidebar-inner"),
-        f = i("div.post-content  > p > a:has(img)"),
+        f = i("div.post-content p a:has(img)"),
         j = i(window),
         g = h.offset().top;
     f.css("display", "block");
