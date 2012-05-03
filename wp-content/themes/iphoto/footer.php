@@ -7,7 +7,8 @@
 <script type="text/javascript">
 /* <![CDATA[ */
 $("div.post-content > p > a > img").
-    attr({'data-original' : $(self).attr('src'), 'src' : '<?php bloginfo('template_url'); ?>/images/logo-b.png'}).
+    attr('data-original', $(self).attr('src')).
+    attr('src', '<?php bloginfo('template_url'); ?>/images/logo-b.png').
     lazyload();
 /* ]]> */
 </script>
