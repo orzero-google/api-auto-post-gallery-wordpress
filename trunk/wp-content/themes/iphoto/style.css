@@ -47,6 +47,7 @@ a:hover {
 	padding-top:40px
 }
 #container,#archives,#wrapper {
+    background-color: #DCDDDF;
 	margin:0 auto
 }
 #container,#header-box,#archives {
