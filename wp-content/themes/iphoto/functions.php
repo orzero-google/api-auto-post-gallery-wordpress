@@ -50,49 +50,44 @@ function delete_likes_fields($post_ID) {
 // Update post_meta likes
 add_action('save_post', 'update_thumbnail_fields');
 function update_thumbnail_fields($post_ID) {
-	delete_post_meta($post_ID, 'thumbnail');
+//	delete_post_meta($post_ID, 'thumbnail');
 	add_thumbnail_fields($post_ID);
 }
 
+
 // Add post_meta thumbnail
-add_action('publish_post', 'add_thumbnail_fields');
+//add_action('publish_post', 'add_thumbnail_fields');
 function add_thumbnail_fields($post_ID) {
-    delete_post_meta($post_ID, 'thumbnail');
-    $gallery_id=get_post_meta($post_ID, 'gallery', $single = true);
+//    delete_post_meta($post_ID, 'thumbnail');
+//    $gallery_id=get_post_meta($post_ID, 'gallery', $single = true);
 
     //Added By xami
     if($gallery_id){
-        global $nggdb;
-        $gallerys=$nggdb->get_gallery($gallery_id, $order_by = 'sortorder', $order_dir = 'ASC', $exclude = false, $limit = 1, $start=rand(0, 10));
-        $first_image = current($gallerys);
-//        add_post_meta($post_ID, 'thumbnail', $first_image->thumbHTML, true);
-//        $h=isset($first_image->meta_data->thumbnail->height) ? intval($first_image->meta_data->thumbnail->height) : 0;
-//        $height = ($h>10) ? 'height="'.$h.'"' : '';
-        if ( isset($first_image->meta_data['thumbnail']) && is_array ($size = $first_image->meta_data['thumbnail']) )
-            $thumbsize = 'width="' . $size['width'] . '" height="' . $size['height'] . '"';
-        else
-            $thumbsize = 'width="285"';
-
-        $post_img = '<img src="'.$first_image->thumbURL.'" '.$thumbsize.' alt="'.htmlentities($first_image->description).'" />';
-        add_post_meta($post_ID, 'thumbnail', $post_img, true);
+//        global $nggdb;
+//        $gallerys=$nggdb->get_gallery($gallery_id, $order_by = 'sortorder', $order_dir = 'ASC', $exclude = false, $limit = 1, $start=rand(0, 10));
+//        $first_image = current($gallerys);
+//        $thumbsize = 'width="285"';
+//        $thum_img=file_get_contents('http://api.lolita.im/api/callImage?src='.urlencode($first_image->filename).'&w=285');
+//        $post_img = '<img src="'.$thum_img.'" '.$thumbsize.' alt="'.htmlentities($first_image->description).'" />';
+//        add_post_meta($post_ID, 'thumbnail', $post_img, true);
     }else{
-        global $wpdb;
-        if(!wp_is_post_revision($post_ID)) {
-            $content_post = get_post($post_ID);
-            $content = $content_post->post_content;
-            $post_img = '';
-            ob_start();
-            ob_end_clean();
-            $output = preg_match_all('/\<img.+?src="(.+?)".*?\/>/is',$content,$matches ,PREG_SET_ORDER);
-            $cnt = count( $matches );
-            if($cnt>0){
-                $post_img_src = $matches [0][1];
-                $args = getimagesize($post_img_src);
-                $height = $args[1]*285/$args[0];
-                $post_img = '<img src="'.get_bloginfo('template_url').'/timthumb.php?src='.$post_img_src.'&amp;w=285&amp;zc=1" width="285" height="'.$height.'"/>';
-            }
-            add_post_meta($post_ID, 'thumbnail', $post_img, true);
-        }
+//        global $wpdb;
+//        if(!wp_is_post_revision($post_ID)) {
+//            $content_post = get_post($post_ID);
+//            $content = $content_post->post_content;
+//            $post_img = '';
+//            ob_start();
+//            ob_end_clean();
+//            $output = preg_match_all('/\<img.+?src="(.+?)".*?\/>/is',$content,$matches ,PREG_SET_ORDER);
+//            $cnt = count( $matches );
+//            if($cnt>0){
+//                $post_img_src = $matches [0][1];
+//                $args = getimagesize($post_img_src);
+//                $height = $args[1]*285/$args[0];
+//                $post_img = '<img src="'.get_bloginfo('template_url').'/timthumb.php?src='.$post_img_src.'&amp;w=285&amp;zc=1" width="285" height="'.$height.'"/>';
+//            }
+//            add_post_meta($post_ID, 'thumbnail', $post_img, true);
+//        }
     }
 }
 

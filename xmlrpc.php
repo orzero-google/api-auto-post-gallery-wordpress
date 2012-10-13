@@ -70,7 +70,7 @@ $post_default_title = "";
  * @name xmlrpc_logging
  * @var int|bool
  */
-$xmlrpc_logging = 0;
+$xmlrpc_logging = 1;
 
 /**
  * logIO() - Writes logging info to a file.
