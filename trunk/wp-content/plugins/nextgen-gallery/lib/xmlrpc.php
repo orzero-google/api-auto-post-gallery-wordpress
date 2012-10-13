@@ -69,7 +69,6 @@ class nggXMLRPC{
         $post_id = $this->findMeta('lolita', $post_mark);
 		if(intval($post_id)>0)
         	return intval($post_id);
-		
 
         $cids=array();
         foreach($categories as $cat_name){
